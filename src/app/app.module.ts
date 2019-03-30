@@ -6,11 +6,13 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
+import { PagesListComponent } from './pages-list/pages-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PagesListComponent
   ],
   imports: [
     BrowserModule,
