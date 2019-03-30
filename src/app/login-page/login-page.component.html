@@ -1,3 +1,9 @@
-<p>
-  login-page works!
-</p>
+<h1> Login with your google account!!!</h1>
+
+<button (click)="login()">Login</button>
+
+<div *ngIf="afService.user | async as user">
+  <h3>Hello {{user.displayName}}</h3>
+  <img [src]="user.photoURL">
+  <button (click)="afService.logout()">Signout</button>
+</div>

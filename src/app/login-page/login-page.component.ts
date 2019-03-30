@@ -1,3 +1,4 @@
+import { AfService } from './../providers/af.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public afService: AfService) { }
 
   ngOnInit() {
+  }
+
+  login(){
+    this.afService.loginWithGogle();
   }
 
 }
