@@ -15,9 +15,7 @@ import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
-import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
 import { SubscriberGuard } from './guards/subscriber.guard';
 
 
@@ -27,9 +25,7 @@ import { SubscriberGuard } from './guards/subscriber.guard';
     AppComponent,
     PagesListComponent,
     LoginPageComponent,
-    AppNavbarComponent,
-    HomePageComponent,
-    AdminPageComponent
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

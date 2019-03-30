@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span routerLink="/">CMS App</span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/article">Article page</button>
+    <button mat-button routerLink="/admin">Admin</button>
+    <div *ngIf="!user">
+      <button mat-button routerLink="/login">Login page</button>
+    </div>
+
+
+
+    <div *ngIf="user">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <span>Hello {{user.displayName}}</span>
+        <img class="profileImg" [src]="user.photoURL">
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>account_circle</mat-icon>
+          <span>Account</span>
+        </button>
+  
+        <button mat-menu-item (click)="afService.logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+
+<div *ngIf="user">
+  <p>Subscriber: {{user.roles?.subscriber ? 'true': 'false'}}</p>
+  <p>Admin: {{user.roles?.admin ? 'true': 'false'}}</p>
+</div>
