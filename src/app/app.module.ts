@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule, AppRoutingModule, AngularFireAuthModule 
+    AngularFireDatabaseModule, AppRoutingModule, AngularFireAuthModule, AngularFirestoreModule 
   ],
   providers: [AfService],
   bootstrap: [AppComponent]
