@@ -3,7 +3,7 @@ import { User } from './../model/user';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import firebase = require('firebase');
+import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AfService {
