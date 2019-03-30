@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { AdminGuard } from './guards/admin.guard';
 import { AfService } from './providers/af.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -5,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule} from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +21,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { SubscriberGuard } from './guards/subscriber.guard';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,8 @@ import { SubscriberGuard } from './guards/subscriber.guard';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule, AppRoutingModule, AngularFireAuthModule, AngularFirestoreModule 
+    AngularFireDatabaseModule, AppRoutingModule, AngularFireAuthModule, AngularFirestoreModule ,
+    BrowserAnimationsModule, MaterialModule
   ],
   providers: [AfService, AdminGuard, SubscriberGuard],
   bootstrap: [AppComponent]
