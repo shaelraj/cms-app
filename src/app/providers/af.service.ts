@@ -35,7 +35,7 @@ export class AfService {
       photoURL: user.photoURL,
       roles: {
         subscriber: true,
-        admin: true
+        admin: false
       }
     };
     return userRef.set(Object.assign({}, data), {merge: true});

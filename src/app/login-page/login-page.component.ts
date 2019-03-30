@@ -9,12 +9,9 @@ import { User } from './../model/user';
 })
 export class LoginPageComponent implements OnInit {
 
-  user: User;
-
   constructor(public afService: AfService) { }
 
   ngOnInit() {
-    this.afService.user$.subscribe(user=> this.user= user);
   }
 
   login(){
