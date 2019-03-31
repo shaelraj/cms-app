@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database'
-import { Observable } from 'rxjs-compat';
+import { Observable } from 'rxjs';
 
 
 @Component({

@@ -1,4 +1,7 @@
-import { Observable } from 'rxjs-compat';
+
+import {of as observableOf, Observable} from 'rxjs';
+
+import {switchMap} from 'rxjs/operators'
 import { User } from './../model/user';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -10,13 +13,13 @@ export class AfService {
   user$: Observable<User>;
 
   constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {
-    this.user$ = this.afAuth.authState.switchMap(user => {
+    this.user$ = this.afAuth.authState.pipe(switchMap(user => {
       if (user) {
         return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
       } else {
-        return Observable.of(null);
+        return observableOf(null);
       }
-    })
+    }))
   }
 
   loginWithGogle() {
