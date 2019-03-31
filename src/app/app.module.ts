@@ -10,16 +10,14 @@ import { AngularFireModule} from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { HomePageComponent } from './home-page/home-page.component';
 import { SubscriberGuard } from './guards/subscriber.guard';
 import { FormsModule } from '@angular/forms';
+import { FrontPageModule } from './front-page/front-page.module';
 
 
 
@@ -27,15 +25,13 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    PagesListComponent,
     LoginPageComponent,
-    HomePageComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, AppRoutingModule, AngularFireAuthModule, AngularFirestoreModule ,
-    BrowserAnimationsModule, MaterialModule, FormsModule
+    BrowserAnimationsModule, MaterialModule, FormsModule, FrontPageModule
   ],
   providers: [AfService, AdminGuard, SubscriberGuard, MenusService, PostsService],
   bootstrap: [AppComponent]
