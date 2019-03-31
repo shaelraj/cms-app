@@ -1,9 +1,11 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <mat-toolbar-row>
     <span routerLink="/">CMS App</span>
     <span class="example-spacer"></span>
+    <div *ngFor="let menu of menuList">
+      <button mat-button routerLink="/pages/{{menu.url}}">{{menu.title}}</button>
+    </div>
     <button mat-button routerLink="/article">Article page</button>
-    <button mat-button routerLink="/admin">Admin</button>
     <div *ngIf="!user">
       <button mat-button routerLink="/login">Login page</button>
     </div>
@@ -29,12 +31,3 @@
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
-
-
-
-
-
-<div *ngIf="user">
-  <p>Subscriber: {{user.roles?.subscriber ? 'true': 'false'}}</p>
-  <p>Admin: {{user.roles?.admin ? 'true': 'false'}}</p>
-</div>

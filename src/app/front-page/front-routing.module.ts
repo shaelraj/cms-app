@@ -1,3 +1,4 @@
+import { PagesComponent } from './pages/pages.component';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FrontPageComponent } from './front-page.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
         children: [
             { path: 'home', component: HomePageComponent },
             { path: 'article', component: PagesListComponent },
+            { path: 'pages/:url', component: PagesComponent },
             { path: '**', component: HomePageComponent },
         ]
     },

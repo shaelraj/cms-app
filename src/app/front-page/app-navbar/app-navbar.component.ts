@@ -1,3 +1,4 @@
+import { MenusService } from './../../services/menus/menus.service';
 import { AfService } from './../../providers/af.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from './../../model/user';
@@ -9,11 +10,14 @@ import { User } from './../../model/user';
 })
 export class AppNavbarComponent implements OnInit {
   user: User;
-  constructor(public afService: AfService) { 
-    this.afService.user$.subscribe(user=> this.user= user);
-  }
+  menuList:any;
+  constructor(public afService: AfService, private menuService: MenusService) {  }
 
   ngOnInit() {
+    this.afService.user$.subscribe(user=> this.user= user);
+    this.menuService.getMenus().subscribe(menus =>{
+      this.menuList = menus;
+    })
   }
 
 }
