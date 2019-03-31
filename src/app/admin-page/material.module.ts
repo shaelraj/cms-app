@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -17,12 +18,12 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     imports:[
         MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule,
         MatSidenavModule, MatListModule, MatTableModule, MatInputModule,
-        MatFormFieldModule, MatPaginatorModule
+        MatFormFieldModule, MatPaginatorModule, MatDialogModule
     ],
     exports:[
         MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule,
         MatSidenavModule, MatListModule, MatTableModule, MatInputModule,
-        MatFormFieldModule, MatPaginatorModule
+        MatFormFieldModule, MatPaginatorModule, MatDialogModule
     ]
 })
 

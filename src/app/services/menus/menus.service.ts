@@ -22,7 +22,6 @@ export class MenusService {
         })
       })
     );
-
     // return this.afs.collection('menus').valueChanges();
   }
 

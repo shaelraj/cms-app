@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Edit Menu</h1>
+
+<div mat-dialog-content>
+    <div>
+        <mat-form-field>
+            <input matInput [(ngModel)]="data.title" placeholder="Title" required>
+          </mat-form-field>
+    
+          <mat-form-field>
+              <input matInput [(ngModel)]="data.url" placeholder="URL" required>
+          </mat-form-field>
+    
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data"  color="primary">Update</button>
+  <button mat-raised-button mat-dialog-close="false" cdkFocusInitial>Cancel</button>
+</div>

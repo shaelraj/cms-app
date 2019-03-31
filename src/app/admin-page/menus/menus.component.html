@@ -37,6 +37,20 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header> URL </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.url}} </mat-cell>
       </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef > Action </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+            <button mat-icon-button aria-label="edit" color="primary" (click)="openEditDialog(element)">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button aria-label="delete" color="warn" (click)="openDialog(element.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+               
+        </mat-cell>
+      </ng-container>
   
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
