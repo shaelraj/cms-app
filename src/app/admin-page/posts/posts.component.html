@@ -1,11 +1,12 @@
 <div>
+  <form [formGroup]= "postForm">
     <mat-form-field>
-        <input matInput [(ngModel)]="postDetails.title" placeholder="Title" required>
+        <input matInput  placeholder="Title" formControlName="title" required>
       </mat-form-field>
 
       <mat-form-field>
           <mat-label>Menu Id</mat-label>
-          <mat-select [(ngModel)]="postDetails.menu_id">
+          <mat-select  formControlName="menu_id">
             <mat-option *ngFor="let menu of menuList" [value]="menu.id">
               {{menu.title}}
             </mat-option>
@@ -14,11 +15,11 @@
         
 
       <mat-form-field>
-          <textarea  matInput [(ngModel)]="postDetails.content" placeholder="Content" required></textarea>
+          <textarea  matInput  formControlName="content" placeholder="Content" required></textarea>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" (click)="addPost()">Add</button>
-
+      <button mat-raised-button color="primary" (click)="addPost()" [disabled]="!postForm.valid">Add</button>
+    </form>
 </div>
 
 <div class="example-container mat-elevation-z8">

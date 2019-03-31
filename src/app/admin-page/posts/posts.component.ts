@@ -1,10 +1,11 @@
 import { MenusService } from './../../services/menus/menus.service';
 import { ConfirmationDialogComponent } from './../shared/confirmation-dialog/confirmation-dialog.component';
 import { PostsService, Post } from './../../services/posts/posts.service';
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import { EditPostComponent } from './edit-post/edit-post.component';
+import { FormGroup, FormControl, Validator, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-posts',
@@ -21,13 +22,22 @@ export class PostsComponent implements OnInit {
 
   menuList: any;
 
+  postForm: FormGroup;
+
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   displayedColumns = ['id', 'title', 'menu_id', 'content', 'actions'];
   dataSource = new MatTableDataSource();
 
-  constructor(private post: PostsService,private menu: MenusService, public dialog: MatDialog) { }
+  constructor(private post: PostsService, private menu: MenusService, public dialog: MatDialog
+    , private fb: FormBuilder) { 
+    this.postForm = this.fb.group ({
+      title: ['', Validators.required],
+      menu_id: ['', Validators.required],
+      content: ['', Validators.required]
+    });
+  }
 
   ngOnInit() {
     this.post.getPosts().subscribe((data: any) => {
@@ -45,7 +55,7 @@ export class PostsComponent implements OnInit {
   }
 
   addPost() {
-    this.post.addPost(this.postDetails);
+    this.post.addPost(this.postForm.value);
   }
 
   applyFilter(filterValue: string) {
