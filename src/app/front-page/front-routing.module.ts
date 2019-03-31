@@ -7,7 +7,7 @@ const routes: Routes = [
     {
         path: '', component: FrontPageComponent,
         children: [
-            { path: 'home', component: HomePageComponent },
+            { path: '', component: HomePageComponent },
             { path: 'article', component: PagesListComponent },
             { path: 'pages/:url', component: PagesComponent },
             { path: '**', component: HomePageComponent },

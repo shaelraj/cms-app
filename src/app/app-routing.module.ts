@@ -5,9 +5,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-    { path: '', loadChildren: 'app/front-page/front-page.module#FrontPageModule'},
+    { path: 'home', loadChildren: 'app/front-page/front-page.module#FrontPageModule'},
     { path: 'login', component: LoginPageComponent},
-    { path: 'admin',loadChildren: 'app/admin-page/admin-page.module#AdminPageModule', canActivate: [AdminGuard]}
+    { path: 'admin',loadChildren: 'app/admin-page/admin-page.module#AdminPageModule', canActivate: [AdminGuard]},
+    { path: '**', redirectTo: 'home' }
 ]
 
 @NgModule({

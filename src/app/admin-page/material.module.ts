@@ -12,19 +12,23 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
 
 
 
 @NgModule({
     imports:[
+        CommonModule,
         MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule,
         MatSidenavModule, MatListModule, MatTableModule, MatInputModule,
-        MatFormFieldModule, MatPaginatorModule, MatDialogModule, MatSelectModule
+        MatFormFieldModule, MatPaginatorModule, MatDialogModule, MatSelectModule,
+        MatCardModule
     ],
     exports:[
         MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule,
         MatSidenavModule, MatListModule, MatTableModule, MatInputModule,
-        MatFormFieldModule, MatPaginatorModule, MatDialogModule, MatSelectModule
+        MatFormFieldModule, MatPaginatorModule, MatDialogModule, MatSelectModule,
+        MatCardModule
     ]
 })
 
