@@ -1,3 +1,5 @@
+import { PostsComponent } from './posts/posts.component';
+import { MenusComponent } from './menus/menus.component';
 import { AdminPageComponent } from './admin-page.component';
 
 import { NgModule } from '@angular/core';
@@ -8,7 +10,10 @@ const routes: Routes = [
         path: '', component: AdminPageComponent,
         children: [
             { path: 'dashboard', component: DashboardComponent },
-            { path: '', redirectTo: "dashboard" }
+            { path: 'menus', component: MenusComponent },
+            { path: 'posts', component: PostsComponent },
+            { path: '', redirectTo: "dashboard" },
+            { path: '**', component: DashboardComponent },
         ]
     },
 ]
