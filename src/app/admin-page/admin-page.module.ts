@@ -7,12 +7,14 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenusComponent } from './menus/menus.component';
 import { PostsComponent } from './posts/posts.component';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule, ReactiveFormsModule
   ],
   declarations: [DashboardComponent, AdminPageComponent, AppNavbarComponent, MenusComponent, PostsComponent
   ]

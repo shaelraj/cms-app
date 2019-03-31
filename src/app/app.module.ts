@@ -1,3 +1,5 @@
+import { PostsService } from './services/posts/posts.service';
+import { MenusService } from './services/menus/menus.service';
 import { MaterialModule } from './material.module';
 import { AdminGuard } from './guards/admin.guard';
 import { AfService } from './providers/af.service';
@@ -14,9 +16,11 @@ import { environment } from '../environments/environment';
 import { PagesListComponent } from './pages-list/pages-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SubscriberGuard } from './guards/subscriber.guard';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -31,9 +35,9 @@ import { SubscriberGuard } from './guards/subscriber.guard';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, AppRoutingModule, AngularFireAuthModule, AngularFirestoreModule ,
-    BrowserAnimationsModule, MaterialModule
+    BrowserAnimationsModule, MaterialModule, FormsModule
   ],
-  providers: [AfService, AdminGuard, SubscriberGuard],
+  providers: [AfService, AdminGuard, SubscriberGuard, MenusService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

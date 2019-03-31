@@ -6,17 +6,23 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
 @NgModule({
     imports:[
         MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule,
-        MatSidenavModule, MatListModule
+        MatSidenavModule, MatListModule, MatTableModule, MatInputModule,
+        MatFormFieldModule, MatPaginatorModule
     ],
     exports:[
         MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule,
-        MatSidenavModule, MatListModule
+        MatSidenavModule, MatListModule, MatTableModule, MatInputModule,
+        MatFormFieldModule, MatPaginatorModule
     ]
 })
 
