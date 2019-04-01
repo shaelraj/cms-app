@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span routerLink="/">CMS App</span>
+    <span routerLink="/">Java Monks Blog</span>
     <span class="example-spacer"></span>
     <div *ngFor="let menu of menuList">
       <button mat-button routerLink="/home/pages/{{menu.url}}">{{menu.title}}</button>
     </div>
-    <button mat-button routerLink="/home/article">Article page</button>
+    <button mat-button routerLink="/home/article">Pro Blog</button>
     <div *ngIf="!user">
       <button mat-button routerLink="/login">Login page</button>
     </div>

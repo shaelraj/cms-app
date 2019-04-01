@@ -1,3 +1,4 @@
+import { PostsService } from './../../services/posts/posts.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  postList: any;
+
+  constructor(private postService: PostsService) { 
+    this.postService.getPosts().subscribe(posts=>{
+      this.postList = posts;
+    });
+  }
 
   ngOnInit() {
   }
