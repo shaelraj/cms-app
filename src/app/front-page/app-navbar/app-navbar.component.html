@@ -7,7 +7,7 @@
     </div>
     <button mat-button routerLink="/home/article">Pro Blog</button>
     <div *ngIf="!user">
-      <button mat-button routerLink="/login">Login page</button>
+      <button mat-icon-button (click)="afService.loginWithGogle()"><mat-icon>input</mat-icon></button>
     </div>
 
 
@@ -18,13 +18,9 @@
         <img class="profileImg" [src]="user.photoURL">
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>account_circle</mat-icon>
-          <span>Account</span>
-        </button>
   
         <button mat-menu-item (click)="afService.logout()">
-          <mat-icon>exit_to_app</mat-icon>
+          <mat-icon>power_settings_new</mat-icon>
           <span>Logout</span>
         </button>
       </mat-menu>

@@ -25,11 +25,18 @@ export class AfService {
   loginWithGogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
     this.afAuth.auth.signInWithPopup(provider).then((credentials) => {
-      this.updateUser(credentials.user);
+      this.updateUser(credentials.user, false);
     });
   }
 
-  updateUser(user) {
+  loginWithGogleAdmin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    this.afAuth.auth.signInWithPopup(provider).then((credentials) => {
+      this.updateUser(credentials.user, true);
+    });
+  }
+
+  updateUser(user, adminFlag) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
       uid : user.uid,
@@ -38,7 +45,7 @@ export class AfService {
       photoURL: user.photoURL,
       roles: {
         subscriber: true,
-        admin: false
+        admin: adminFlag
       }
     };
     return userRef.set(Object.assign({}, data), {merge: true});
